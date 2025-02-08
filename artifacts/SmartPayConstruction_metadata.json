@@ -49,37 +49,6 @@
 					{
 						"indexed": false,
 						"internalType": "uint256",
-						"name": "id",
-						"type": "uint256"
-					},
-					{
-						"indexed": false,
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"indexed": false,
-						"internalType": "string",
-						"name": "client",
-						"type": "string"
-					},
-					{
-						"indexed": false,
-						"internalType": "string",
-						"name": "contractor",
-						"type": "string"
-					}
-				],
-				"name": "ProjectCreated",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": false,
-						"internalType": "uint256",
 						"name": "projectId",
 						"type": "uint256"
 					},
@@ -220,6 +189,53 @@
 						"internalType": "uint256",
 						"name": "_endDate",
 						"type": "uint256"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "project_id",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "title",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "description",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "validation_steps",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "value",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string[]",
+								"name": "validators_ids",
+								"type": "string[]"
+							},
+							{
+								"internalType": "string[]",
+								"name": "validations",
+								"type": "string[]"
+							},
+							{
+								"internalType": "bool",
+								"name": "completed",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct SmartPayConstruction.Stage[]",
+						"name": "_stages",
+						"type": "tuple[]"
 					}
 				],
 				"name": "createProject",
@@ -232,9 +248,9 @@
 				"name": "getAllProjectIds",
 				"outputs": [
 					{
-						"internalType": "uint256[]",
+						"internalType": "string[]",
 						"name": "",
-						"type": "uint256[]"
+						"type": "string[]"
 					}
 				],
 				"stateMutability": "view",
@@ -374,6 +390,72 @@
 			{
 				"inputs": [
 					{
+						"internalType": "string",
+						"name": "projectId",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "stageId",
+						"type": "string"
+					}
+				],
+				"name": "getStageById",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "project_id",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "title",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "description",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "validation_steps",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "value",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string[]",
+								"name": "validators_ids",
+								"type": "string[]"
+							},
+							{
+								"internalType": "string[]",
+								"name": "validations",
+								"type": "string[]"
+							},
+							{
+								"internalType": "bool",
+								"name": "completed",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct SmartPayConstruction.Stage",
+						"name": "s",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "uint256",
 						"name": "projectId",
 						"type": "uint256"
@@ -400,9 +482,9 @@
 				"name": "projectIds",
 				"outputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "string",
 						"name": "",
-						"type": "uint256"
+						"type": "string"
 					}
 				],
 				"stateMutability": "view",
@@ -411,9 +493,9 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "string",
 						"name": "",
-						"type": "uint256"
+						"type": "string"
 					}
 				],
 				"name": "projects",
@@ -509,7 +591,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"smartContract_eliseu.sol": "SmartPayConstruction"
+			"smartContract_eliseu_v1.sol": "SmartPayConstruction"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -523,12 +605,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"smartContract_eliseu.sol": {
-			"keccak256": "0x51b32ed8f3e59dd576c407f87cae72f224eb7f48ad80dd2a83653e949267554a",
+		"smartContract_eliseu_v1.sol": {
+			"keccak256": "0x675772a49e02f8d74402a159b688bcac659ca06f700e9bcf33bd997a937c6a1c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://956adbcad2f0e556743fed1d496cfc37049d328a2d062a04f95ce6c46ea962cf",
-				"dweb:/ipfs/QmV4LhhJJPmA8Tdsghv7mNWAQcBEw42tpTBopD9AfK142n"
+				"bzz-raw://25de5c71ab9f23f972fea03be271ed2068402d4329f3496c010bc33e9ec3ace6",
+				"dweb:/ipfs/QmYkX9fswPN79k7fqHQdbkXY3uZGryGBw335w1pWKvzXsp"
 			]
 		}
 	},
