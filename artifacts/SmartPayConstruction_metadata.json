@@ -102,24 +102,66 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "projectId",
-						"type": "uint256"
-					},
-					{
 						"internalType": "string",
-						"name": "_description",
+						"name": "projectId",
 						"type": "string"
 					},
 					{
-						"internalType": "uint256",
-						"name": "_value",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string[]",
-						"name": "_validators_ids",
-						"type": "string[]"
+						"components": [
+							{
+								"internalType": "string",
+								"name": "stage_id",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "title",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "description",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "validation_steps",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "value",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string[]",
+								"name": "validators_ids",
+								"type": "string[]"
+							},
+							{
+								"internalType": "string[]",
+								"name": "validations",
+								"type": "string[]"
+							},
+							{
+								"internalType": "uint256",
+								"name": "totalValidators",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amountToValidator",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "completed",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct SmartPayConstruction.Stage",
+						"name": "_stage",
+						"type": "tuple"
 					}
 				],
 				"name": "addStage",
@@ -151,6 +193,30 @@
 				"name": "closeProject",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "a",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "b",
+						"type": "string"
+					}
+				],
+				"name": "compareStrings",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "pure",
 				"type": "function"
 			},
 			{
@@ -194,7 +260,7 @@
 						"components": [
 							{
 								"internalType": "string",
-								"name": "project_id",
+								"name": "stage_id",
 								"type": "string"
 							},
 							{
@@ -226,6 +292,16 @@
 								"internalType": "string[]",
 								"name": "validations",
 								"type": "string[]"
+							},
+							{
+								"internalType": "uint256",
+								"name": "totalValidators",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amountToValidator",
+								"type": "uint256"
 							},
 							{
 								"internalType": "bool",
@@ -406,7 +482,7 @@
 						"components": [
 							{
 								"internalType": "string",
-								"name": "project_id",
+								"name": "stage_id",
 								"type": "string"
 							},
 							{
@@ -440,6 +516,16 @@
 								"type": "string[]"
 							},
 							{
+								"internalType": "uint256",
+								"name": "totalValidators",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amountToValidator",
+								"type": "uint256"
+							},
+							{
 								"internalType": "bool",
 								"name": "completed",
 								"type": "bool"
@@ -448,6 +534,30 @@
 						"internalType": "struct SmartPayConstruction.Stage",
 						"name": "s",
 						"type": "tuple"
+					},
+					{
+						"internalType": "bool",
+						"name": "found",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "projectId",
+						"type": "string"
+					}
+				],
+				"name": "getStagesCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -606,11 +716,11 @@
 	},
 	"sources": {
 		"smartContract_eliseu_v1.sol": {
-			"keccak256": "0x675772a49e02f8d74402a159b688bcac659ca06f700e9bcf33bd997a937c6a1c",
+			"keccak256": "0xa8513a43b6bf5e2679a1ac7f26029d38b74a6fa316cfddc50b027cd0074c86f6",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://25de5c71ab9f23f972fea03be271ed2068402d4329f3496c010bc33e9ec3ace6",
-				"dweb:/ipfs/QmYkX9fswPN79k7fqHQdbkXY3uZGryGBw335w1pWKvzXsp"
+				"bzz-raw://fd93330c366f32ad4dee7d643941e95488aecbac3bb0169ef750153660ca2185",
+				"dweb:/ipfs/Qmcsgj1VpCHDPHTx4aQMrUuLDKuzRxWUfcKqh79X3hxYgg"
 			]
 		}
 	},
